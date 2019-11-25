@@ -70,9 +70,9 @@ function* requestAllAPIData() {
 function* requestCoincapAPIData() {
   try {
     const [ethData, ltcData, dashData] = yield all([
-      call(fetchData, "http://coincap.io/page/ETH"),
-      call(fetchData, "http://coincap.io/page/LTC"),
-      call(fetchData, "http://coincap.io/page/DASH")
+      call(fetchData, "http://coincap.io/assets/ETH"),
+      call(fetchData, "http://coincap.io/assets/LTC"),
+      call(fetchData, "http://coincap.io/assets/DASH")
     ]);
     yield put(
       actions.receiveCoincapAPIData({
